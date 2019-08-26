@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Benefícios dos Sumos e Smoothies de Vegetais</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+      <!-- Bootstrap core CSS -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="assetsW/css/style.css" type="text/css" />
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_PT/sdk.js#xfbml=1&version=v4.0">
+      </script>
+      <div id="fb-root"></div>
+      <div id="app">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                              <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Registration</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                    </button>
+                              </div>
+                              <div class="modal-body">
+                                    <form>
+                                          <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                                      aria-describedby="emailHelp" placeholder="Enter email">
+                                                <small id="emailHelp" class="form-text text-muted">We'll never share
+                                                      your
+                                                      email with anyone else.</small>
+                                          </div>
+                                          <div class="form-group">
+                                                <label for="exampleInputPassword1">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                                      placeholder="Password">
+                                          </div>
+                                          <div class="form-group form-check">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                          </div>
+                                    </form>
+                              </div>
+                              <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Sign up</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <nav id="navigation" class="navbar navbar-expand-lg" v-bind:class="bg">
+                  <a class="navbar-brand" href="#">{{navbrand}}</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                              <menu-items v-for="item in menuItems" v-bind:key="menuItems.id" v-bind:item="item">
+                              </menu-items>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                              <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                    Registration
+                              </button>
+                        </form>
+                  </div>
+            </nav>
+
+            <div class="container mb-4 mt-4 col-xl-6">
+                  <div class="row justify-content-center">
+                        <div class="col col-xl-12 col-lg-12">
+                              <h2 class="title">{{title}}</h2>
+                        </div>
+                  </div>
+                  <div class="row  mb-4 mt-4">
+                        <div class="col col-xl-8 col-lg-8">
+                              <img src="assetsW/img/1.jpg" class="img-fluid z-depth-3" alt="">
+                        </div>
+                  </div>
+
+                  <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></blog-post>
+
+                  <div class="fb-like mt-4" v-bind:data-href="navbrandWithProtocol" data-width="" data-layout="button"
+                        data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="page-footer font-small pt-4" v-bind:class="bg">
+
+                  <div class="footer-copyright text-center py-3" v-bind:class="color">© 2019 Copyright: {{navbrand}} |
+                        <a v-bind:class="color" href="https://mdbootstrap.com/education/bootstrap/" data-toggle="modal"
+                              data-target="#privacy">privacy policy</a>
+                  </div>
+                  <!-- Copyright -->
+
+            </footer>
+            <!-- Footer -->
+
+            <div class="modal fade" id="privacy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                              <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">privacy policy</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                    </button>
+                              </div>
+                              <div class="modal-body">
+                                    <h3 class="display-5"> 1. DEFINITION OF TERMS </h3>
+                                    <ul>
+                                          <li> "Site" - site {{navbrand}} </li>
+                                          <li> "Site Administration": Employees authorized to administer the
+                                                site,acting on behalf of the {{navbrand}} Limited Liability
+                                                Company, which organizesand(or) performs the processing of
+                                                personal data as well as determines thepurpose of personal data
+                                                processing, composition of personal data toprocessed, actions
+                                                (transactions), commitment to personal data </Li>
+                                          <li> "Personal Data": any directly or indirectly related informationto a
+                                                specific or specific person (subject to personal data). </li>
+                                          <li> "Processing of Personal Data": any action combination(operation) of
+                                                actions (operations) performed with instrumentation or use of
+                                                thesaid items means of communication with personal data, including
+                                                collection,registration, accumulation, de-systematization,
+                                                archiving, improvement(update, modification), extraction, user
+                                                transmission(distribution, provision, access), depersonalization,
+                                                blocking,cancellation, destruction of personal data. </li>
+                                          <li> "Confidentiality of personal data" - Mandatory administration of
+                                                thewebsite or another person who has gained access to personal
+                                                data withoutobligation to allow distribution without personal
+                                                consentor other legal bases </li>
+                                    </ul>
+                                    1.1.6. "Site user (hereinafter, the user)" means a person whohave access
+                                    to the Site through the Internet and through the use of the Site
+                                    1.1.7."Cookies": A small piece of data sent by a web server andstored on the
+                                    user's computer, that the web client or the web browser ofWeb sends whenever
+                                    the web server in an HTTP request duringoTry opening the corresponding website
+                                    page 1.1.8. "IP Address": oneunique deretenoid address in a computer network
+                                    IP protocolintegrated. DISPOSIZE GENERALE 2.1. Your use of the site implies
+                                    youracceptance of this policy confidentiality and conditions forprocessing of
+                                    personal data of the user.2.2. In case of disagreementwith the terms of the
+                                    privacy policy, the user must stop usingsite 2.3. This Privacy Policy applies
+                                    to the Site only. The websitenonmonitor and is not responsible for third party
+                                    websites that the useryou can follow available links on the site 2.4. Siton
+                                    management does notverifies the accuracy of personal data provided to the site
+                                    user.
+                              </div>
+                              <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+      </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+      </script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js">
+      </script>
+      <script type="text/javascript" src="assetsW/js/colors.js"></script>
+      <script type="text/javascript" src="assetsW/js/data.js"></script>
+      <script type="text/javascript" src="assetsW/js/main.js"></script>
+      <script type="text/javascript" src="assetsW/js/header.js"></script>
+      <script type="text/javascript" src="assetsW/js/content.js"></script>
+</body>
+
+</html>
